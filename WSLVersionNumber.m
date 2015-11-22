@@ -20,8 +20,8 @@
 }
 
 - (NSString*)description {
-    return [NSString stringWithFormat:@"<%p> Major: %u Minor: %u Revision: %u",
-            self, self.major, self.minor, self.revision];
+    return [NSString stringWithFormat:@"<%p> Major: %ld Minor: %ld Revision: %ld",
+            self, (long)self.major, (long)self.minor, (long)self.revision];
 }
 
 - (void)setMajor:(NSInteger)major {
@@ -48,7 +48,7 @@
 }
 
 - (void)updateVersionFromNumbers {
-    self.version = [NSString stringWithFormat:@"%d.%d.%d", self.major, self.minor, self.revision];
+    self.version = [NSString stringWithFormat:@"%ld.%ld.%ld", (long)self.major, (long)self.minor, (long)self.revision];
 }
 
 - (void)updateNumbersFromVersion {
